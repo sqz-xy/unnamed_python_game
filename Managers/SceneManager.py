@@ -50,5 +50,4 @@ class SceneManager:
                 self.current_scene.close()
                 self.current_scene = GameScene(self)
 
-        print("Scene Changed")
         self.initialise()
