@@ -13,7 +13,7 @@ class MainMenuScene(Scene):
         self.initialize()
 
     def initialize(self):
-        pass
+        self.scene_manager.input_manager.initialize_binds()
 
     def event(self, p_event):
         self.scene_manager.input_manager.check_input(self.scene_manager, p_event)
@@ -25,4 +25,5 @@ class MainMenuScene(Scene):
         pass
 
     def close(self):
+        self.scene_manager.input_manager.clear_binds()
         pass

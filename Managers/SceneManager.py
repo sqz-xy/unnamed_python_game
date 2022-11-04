@@ -20,8 +20,8 @@ class SceneManager:
         pygame.init()
         pygame.font.init()
         self.canvas = pygame.display.set_mode((500, 500))
-        self.current_scene = MainMenuScene(self)
         self.input_manager = InputManager()
+        self.current_scene = MainMenuScene(self)
         self.initialise()
 
     def initialise(self):
@@ -50,4 +50,5 @@ class SceneManager:
                 self.current_scene.close()
                 self.current_scene = GameScene(self)
 
+        print("Scene Changed")
         self.initialise()

@@ -8,12 +8,12 @@ class InputManager:
     mouse_binds = None
 
     def __init__(self):
-        self.key_binds = dict()
-        self.mouse_binds = dict()
         self.initialize_binds()
 
     def initialize_binds(self):
-        self.key_binds.update({pygame.K_w: "START_GAME"})
+        self.key_binds = dict()
+        self.mouse_binds = dict()
+        self.key_binds.update({pygame.K_w: "START_GAME"})   #Default bind, remove at some point, replace with bind script
 
     def check_input(self, p_scene_manager, p_event):
         if p_event.type == pygame.KEYDOWN:
@@ -25,3 +25,7 @@ class InputManager:
         match p_action:
             case "START_GAME":
                 p_scene_manager.change_scene(SceneType.SceneGame)
+
+    def clear_binds(self):
+        self.key_binds = dict()
+        self.mouse_binds = dict()

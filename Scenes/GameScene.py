@@ -11,10 +11,10 @@ class GameScene(Scene):
         self.scene_manager.updater = self.update
 
     def initialize(self):
-        pass
+        self.scene_manager.input_manager.initialize_binds()
 
     def event(self, p_event):
-        pass
+        self.scene_manager.input_manager.check_input(self.scene_manager, p_event)
 
     def render(self, p_canvas):
         p_canvas.fill((255, 0, 255))
@@ -23,4 +23,4 @@ class GameScene(Scene):
         pass
 
     def close(self):
-        pass
+        self.scene_manager.input_manager.clear_binds()
