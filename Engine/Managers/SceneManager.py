@@ -1,10 +1,10 @@
-from Managers.InputManager import InputManager
-from Scenes.GameScene import *
+from Engine.Managers.InputManager import InputManager
+from Game.Scenes.GameScene import *
 import pygame
 from pygame.locals import *
 
-from Scenes.MainMenuScene import MainMenuScene
-from Scenes.Scene import SceneType
+from Game.Scenes.MainMenuScene import MainMenuScene
+from Engine.Scenes.Scene import SceneType
 
 
 class SceneManager:

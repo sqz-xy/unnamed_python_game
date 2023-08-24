@@ -1,6 +1,6 @@
 import pygame
 
-from Scenes.Scene import SceneType
+from Engine.Scenes.Scene import SceneType
 
 
 class InputManager:

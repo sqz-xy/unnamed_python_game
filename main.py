@@ -1,4 +1,4 @@
-from Managers.SceneManager import SceneManager
+from Engine.Managers.SceneManager import SceneManager
 
 # TODO: Load in keybindings from file, separate binds per scene
 

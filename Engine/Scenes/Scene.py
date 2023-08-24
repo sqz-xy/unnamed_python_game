@@ -1,11 +1,9 @@
 from abc import ABC, abstractmethod
 from enum import Enum
 
-
 class SceneType(Enum):
     SceneMainMenu = 1
     SceneGame = 2
-
 
 class Scene(ABC):
 
