@@ -4,11 +4,9 @@ import pygame
 from pygame.locals import *
 
 from Game.Scenes.MainMenuScene import MainMenuScene
-from Engine.Scenes.Scene import SceneType
-
 
 class SceneManager:
-    title = None
+    title = ""
     renderer = None
     updater = None
     event = None
@@ -19,16 +17,14 @@ class SceneManager:
     def __init__(self):
         pygame.init()
         pygame.font.init()
+        pygame.display.set_caption(self.title)
         self.canvas = pygame.display.set_mode((500, 500))
         self.input_manager = InputManager()
-        self.current_scene = MainMenuScene(self)
-        self.initialise()
 
-    def initialise(self):
-        pygame.display.set_caption(self.title)
-
-    def run(self):
+    def run(self, p_start_scene):
         close = False
+
+        self.current_scene = p_start_scene
 
         while not close:
             self.renderer(self.canvas)
@@ -41,13 +37,8 @@ class SceneManager:
 
         self.current_scene.close()
 
-    def change_scene(self, p_scene_type):
-        match p_scene_type:
-            case SceneType.SceneMainMenu:
-                self.current_scene.close()
-                self.current_scene = MainMenuScene(self)
-            case SceneType.SceneGame:
-                self.current_scene.close()
-                self.current_scene = GameScene(self)
+    def change_scene(self, p_new_scene):
+        self.current_scene.close()
+        self.current_scene = p_new_scene
 
-        self.initialise()
+        pygame.display.set_caption(self.title)

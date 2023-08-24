@@ -1,7 +1,6 @@
 import pygame
 
-from Engine.Scenes.Scene import SceneType
-
+from Game.Scenes.GameScene import GameScene
 
 class InputManager:
     key_binds = None
@@ -24,7 +23,7 @@ class InputManager:
     def handle_input(self, p_action, p_scene_manager):
         match p_action:
             case "START_GAME":
-                p_scene_manager.change_scene(SceneType.SceneGame)
+                p_scene_manager.change_scene(GameScene(p_scene_manager))
 
     def clear_binds(self):
         self.key_binds = dict()
