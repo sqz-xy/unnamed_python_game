@@ -1,5 +1,7 @@
 from Engine.Scenes.Scene import Scene
 from Engine.Entity.Entity import Entity
+from pygame.math import Vector2
+
 class MainMenuScene(Scene):
     scene_manager = None
 
@@ -18,6 +20,12 @@ class MainMenuScene(Scene):
         e2 = Entity("nuts")
         print(e1.guid)
         print(e2.guid)
+        
+        v1 = Vector2(1.0, 2.0)
+        v2 = Vector2(1.0, 2.0)
+        v3 = v1 + v2
+        
+        print(v3.x, v3.y)
 
     def event(self, p_event):
         self.scene_manager.input_manager.check_input(self.scene_manager, p_event)
