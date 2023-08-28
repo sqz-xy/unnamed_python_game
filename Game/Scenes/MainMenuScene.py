@@ -1,5 +1,5 @@
 from Engine.Scenes.Scene import Scene
-
+from Engine.Entity.Entity import Entity
 class MainMenuScene(Scene):
     scene_manager = None
 
@@ -13,6 +13,11 @@ class MainMenuScene(Scene):
 
     def initialize(self):
         self.scene_manager.input_manager.initialize_binds()
+        
+        e1 = Entity("deez")
+        e2 = Entity("nuts")
+        print(e1.guid)
+        print(e2.guid)
 
     def event(self, p_event):
         self.scene_manager.input_manager.check_input(self.scene_manager, p_event)
